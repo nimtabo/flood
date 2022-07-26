@@ -52,6 +52,12 @@ function HomeScreen() {
   const router = useRouter();
 
   const { data, isError, isLoading } = useStatistics();
+  const images = [
+    "/home-header-slide-images/Edo_flood.jpg",
+    "/home-header-slide-images/lagos-flood.jpg",
+    "/home-header-slide-images/flood4.jpg",
+    "/home-header-slide-images/flooded.webp",
+  ];
 
   return (
     <main className="w-100 light_bg">
@@ -59,7 +65,11 @@ function HomeScreen() {
         className="row m-0 p-0 d-flex "
         style={{ maxWidth: "100vw", height: "70vh" }}
       >
-        <SlideShow />
+        <SlideShow title={`Flood Prediction ${new Date().getFullYear()}`}
+          description="Turn Around, Don't Drown at Flooded Roads"
+          btnText="Check Your Area"
+          height="92vh"
+          images={images} />
       </section>
 
       <h1 className="text-center new_blue_color py-5"></h1>
@@ -172,7 +182,7 @@ function HomeScreen() {
               src="/home-images/google-play.png"
               width={300}
               height={100}
-              // height={89}
+            // height={89}
             />
           </div>
           <div className="col">
