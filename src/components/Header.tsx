@@ -14,7 +14,7 @@ export default React.memo(function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light border-bottom pt-0 mt-0">
+      <nav className="navbar navbar-expand-lg navbar-light border-bottom border-white pt-0 mt-0">
         <div className="container-fluid px-lg-0 py-lg-0 ">
           <span className="navbar-brand col-lg-4 m-0" onClick={() => goto("/")}>
             <h4
@@ -50,11 +50,10 @@ export default React.memo(function Header() {
                       onClick={() => goto("/")}
                     >
                       <b
-                        className={`fs-6 ${
-                          router.pathname == "/"
-                            ? "new_yellow_color"
-                            : "text-white"
-                        }`}
+                        className={`fs-6 ${router.pathname == "/"
+                          ? "new_yellow_color"
+                          : "text-white"
+                          }`}
                       >
                         HOME
                       </b>
@@ -67,11 +66,10 @@ export default React.memo(function Header() {
                       onClick={() => goto("/flood-forecast")}
                     >
                       <b
-                        className={`fs-6 ${
-                          router.pathname == "/flood-forecast"
-                            ? "new_yellow_color"
-                            : "text-white"
-                        }`}
+                        className={`fs-6 ${router.pathname == "/flood-forecast"
+                          ? "new_yellow_color"
+                          : "text-white"
+                          }`}
                       >
                         FLOOD FORECAST
                       </b>
@@ -81,13 +79,12 @@ export default React.memo(function Header() {
                   <li className="nav-item hoverNavLink">
                     <div className="dropdown">
                       <button
-                        className={`btn dropdown-toggle fs-6 fw-bold ${
-                          Object.keys(informationHubRoutes).includes(
-                            router.pathname
-                          )
-                            ? "new_yellow_color"
-                            : "text-white"
-                        }`}
+                        className={`btn dropdown-toggle fs-6 fw-bold ${Object.keys(informationHubRoutes).includes(
+                          router.pathname
+                        )
+                          ? "new_yellow_color"
+                          : "text-white"
+                          }`}
                         type="button"
                         id="dropdownMenuButton"
                         data-toggle="dropdown"
@@ -105,11 +102,10 @@ export default React.memo(function Header() {
                             <Link href={_route} key={_index}>
                               <span>
                                 <span
-                                  className={`btn text-start ${
-                                    router.pathname == _route
-                                      ? "text-primary"
-                                      : ""
-                                  }`}
+                                  className={`btn text-start ${router.pathname == _route
+                                    ? "text-primary"
+                                    : ""
+                                    }`}
                                   style={{ fontSize: "14px" }}
                                 >
                                   {informationHubRoutes[_route]}
@@ -128,11 +124,10 @@ export default React.memo(function Header() {
                       onClick={() => goto("/tell-your-story")}
                     >
                       <b
-                        className={`fs-6 ${
-                          router.pathname == "/tell-your-story"
-                            ? "new_yellow_color"
-                            : "text-white"
-                        }`}
+                        className={`fs-6 ${router.pathname == "/tell-your-story"
+                          ? "new_yellow_color"
+                          : "text-white"
+                          }`}
                       >
                         TELL YOUR STORY
                       </b>

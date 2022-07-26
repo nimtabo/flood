@@ -1,6 +1,7 @@
 import React from "react";
 import TitleHeader from "../src/components/TitleHeader";
 import Image from "next/image";
+import SlideShow from "../src/components/headerCarousel";
 
 interface contactStruct {
   img: string;
@@ -11,26 +12,6 @@ interface contactStruct {
 }
 
 const data: contactStruct[] = [
-  {
-    img: "/emergency-contacts/red-cross.png",
-    title: "RED CROSS",
-    address: "",
-    socials: [
-      {
-        url: "https://www.facebook.com/NigerianRedCrossSocietyNhqts",
-        logo: "fab fa-facebook-square fa-2x",
-      },
-      {
-        url: "https://www.instagram.com/redcrossnigeria",
-        logo: "fab fa-instagram fa-2x",
-      },
-      {
-        url: "https://twitter.com/nrcs_ng",
-        logo: "fab fa-twitter fa-2x",
-      },
-    ],
-    phones: ["0803 123 0430", "0809 993 7357"],
-  },
   {
     img: "/emergency-contacts/nema.png",
     title: "NEMA",
@@ -50,6 +31,26 @@ const data: contactStruct[] = [
       },
     ],
     phones: ["112", "2347042618875", "+23480022556362"],
+  },
+  {
+    img: "/emergency-contacts/red-cross.png",
+    title: "RED CROSS",
+    address: "",
+    socials: [
+      {
+        url: "https://www.facebook.com/NigerianRedCrossSocietyNhqts",
+        logo: "fab fa-facebook-square fa-2x",
+      },
+      {
+        url: "https://www.instagram.com/redcrossnigeria",
+        logo: "fab fa-instagram fa-2x",
+      },
+      {
+        url: "https://twitter.com/nrcs_ng",
+        logo: "fab fa-twitter fa-2x",
+      },
+    ],
+    phones: ["0803 123 0430", "0809 993 7357"],
   },
   {
     img: "/emergency-contacts/civil-defense.png",
@@ -113,16 +114,33 @@ const output = data.map((item, index) => {
 });
 
 export default function Connect() {
+  const images = [
+    "/home-header-slide-images/red-cross.jpg",
+  ];
   return (
-    <div className="w-100  light_bg">
-      <TitleHeader currentScreen="connect" />
-      <div
-        className={`d-flex flex-column 
+    <>
+      <section
+        className="row m-0 p-0 d-flex "
+        style={{ maxWidth: "100vw", height: "82vh" }}
+      >
+        <SlideShow
+          title="Flood Information Centre"
+          description="Learn how to protect yourself nd family. Check for flood Information and read our flood surviving guid"
+          btnText="Know More"
+          height="82vh"
+          images={images}
+        />
+      </section>
+      <div className="w-100  light_bg">
+        <TitleHeader currentScreen="connect" />
+        <div
+          className={`d-flex flex-column 
       justify-content-center 
       p-0 p-sm-0 p-lg-5 py-3`}
-      >
-        {output}
+        >
+          {output}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

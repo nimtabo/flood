@@ -2,6 +2,7 @@ import "rsuite/dist/rsuite.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "../src/index.css";
 import "../src/screen-breakpoints.css";
+import "../src/home.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "animate.css/animate.min.css";
 import Footer from "../src/components/Footer";
@@ -35,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         ) : (
           <div>
-            <Header />
+            {/* <Header /> */}
             <Offcanvas />
             <ErrorBoundry>
               <div className=" light_bg" style={{ minHeight: "50vh" }}>

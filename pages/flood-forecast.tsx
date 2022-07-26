@@ -91,6 +91,9 @@ export default function FloodForecast() {
     setStateList(nigerianStates.states() as any);
   }, []);
 
+  const images = [
+    "/home-header-slide-images/lagos-flood.jpg",
+  ];
   // main return
   return (
     <>
@@ -101,13 +104,66 @@ export default function FloodForecast() {
         <SlideShow
           title=""
           description=""
-          btnText={`FLOOD FORECAST - ZONE ${
-            formattedAddress && formattedAddress.label
-          }`}
+          btnText={`FLOOD FORECAST - ZONE ${formattedAddress && formattedAddress.label
+            }`}
           height="30vh"
+          images={images}
         />
       </section>
-      <div className=" p-2 p-sm-2 p-lg-5 m-0  light_bg">
+      {/* Changes */}
+      {/* <div className="container-fluid dashboard_weather">
+        <div className="row first-row">
+          <div className="col-6">
+            <i className="fas fa-smog" style={{ fontSize: '36px', color: "white" }}></i
+            ><br />
+            <span className="fog"> Fog </span><br />
+            Nairobi City <br />
+            <span className="degreeone"> 28Â°C </span><br />
+
+            <i className="fas fa-map-marker-alt" style={{ fontSize: "15px" }}></i>Change
+            Location <br />
+            <div className="thursday">
+              <i className="fas fa-less-than" style={{ fontSize: "15px" }}></i>
+              Thursday
+            </div>
+          </div>
+          <div className="col-6 second-column">
+            <i className="fas fa-temperature-high" style={{ fontSize: "20px" }}></i>
+            Humidity
+            <br />
+            <span className="chwani">50% </span><br /><i
+              className="fas fa-meteor"
+              style={{ fontSize: "20px" }}
+            ></i>
+            Air Pressure <br /><span className="pressure"> 1009.483PS </span>
+            <br />
+            <i className="fas fa-cloud-rain" style={{ fontSize: "20px" }}></i>
+            Chance of Rain
+            <br /><span className="rain">
+              0%
+            </span>
+            <br />
+            <i className="fas fa-wind" style={{ fontSize: "20px" }}></i>Wind Speed <br />
+            <span className="speed"> 1.4 km/h</span>
+          </div>
+        </div>
+        <div className="row second-row">
+          <div className="col ">3 PM <br /><span className="one"> 28Â°C</span> <br />Feels like 30Â°C</div>
+          <div className="col ">4 PM <br /><span className="two">28Â°C</span> </div>
+          <div className="col">5 PM <br /><span className="three">24Â°C</span></div>
+          <div className="col">6 PM <br /><span className="four">17Â°C</span></div>
+          <div className="col">7 PM <br /><span className="five">11Â°C</span></div>
+          <div className="col">8 PM <br /><span className="six">11Â°C</span></div>
+          <div className="col">9 PM <br /><span className="seven">5Â°C</span></div>
+          <div className="col">10 PM <br /><span className="eight">1Â°C</span></div>
+          <div className="col">
+            <br /><i className="fa fa-angle-left" style={{ fontSize: " 36px" }}>
+            </i><i className="fa fa-angle-right" style={{ fontSize: " 36px" }}></i> <br />
+          </div>
+        </div>
+      </div> */}
+      {/* **** */}
+      <div className=" p-2 p-sm-2 p-lg-5 m-0  light_bg dashboard_weather">
         <form
           onSubmit={handleSubmit}
           className={`d-flex
@@ -117,9 +173,9 @@ export default function FloodForecast() {
    
         `}
         >
-          <p className="fw-bold me-2 ">Enter Location</p>
+          <p className="fw-bold me-5 text-white ">Enter Location</p>
           <div className="py-1 d-flex align-items-center">
-            <label className="fw-bold me-2" style={{ width: "50px" }}>
+            <label className="fw-bold me-2 text-white" style={{ width: "50px" }}>
               State:
             </label>
             <select
@@ -139,7 +195,7 @@ export default function FloodForecast() {
             </select>
           </div>
           <div className="py-1 d-flex align-items-center">
-            <label className="fw-bold me-2" style={{ width: "50px" }}>
+            <label className="fw-bold me-2 text-white" style={{ width: "50px" }}>
               LGA:
             </label>
             <select
@@ -162,7 +218,7 @@ export default function FloodForecast() {
             </select>
           </div>
           <div className="d-flex align-items-center py-1">
-            <p className="me-2 fw-bold" style={{ width: "50px" }}>
+            <p className="me-2 fw-bold text-white" style={{ width: "50px" }}>
               City:
             </p>
             {googleSuggest}
@@ -185,7 +241,7 @@ export default function FloodForecast() {
             </button>
           </div>
         </form>
-        <div className="m-0 my-2">
+        <div className="m-0 my-2 text-white">
           <p className="fs-6 fw-bold">
             {(formattedAddress && formattedAddress.label) ||
               "Rhema University, Aba-Owerri Road, Aba"}
@@ -233,7 +289,7 @@ export default function FloodForecast() {
           <div className="col col-sm-12 col-lg-12">
             <div className="">
               <h4 className="text-danger">Disclaimer</h4>
-              <p className="fw-bold">
+              <p className="fw-bold text-white">
                 The flood forecast is strictly based on weather and climatic
                 conditions related to your current location. This does not take
                 into account flood events that occur due to man-made factors

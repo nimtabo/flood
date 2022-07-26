@@ -46,7 +46,7 @@ export function DifferentHours(props: any) {
     return (
       <div
         key={index}
-        className=" d-flex flex-column align-items-center me-2 rounded bg-white px-3 shadow"
+        className=" d-flex flex-column align-items-center me-2 rounded bg-transparent px-3 shadow-lg text-white "
       >
         <div>
           <h6 className="p-3" style={{ height: "70px" }}>
@@ -88,7 +88,7 @@ export default function FModalBody({
 
   return (
     <div
-      className="row text-white p-3 m-0 rounded shadow"
+      className="row text-white p-3 m-0 rounded shadow-lg "
       style={{
         textShadow: "2px 2px rgba(0,0,0,0.2)",
         background: "url(/otherImages/cloudySky.png)",
@@ -133,7 +133,7 @@ export default function FModalBody({
       </div>
 
       <div className="col col-sm-6 col-lg-6 d-flex flex-column justify-content-center">
-        <div className="d-flex flex-column justify-content-center">
+        <div className="d-flex flex-column justify-content-center ">
           <div className="d-flex align-items-center py-2">
             <Image src="/svgs/flood_forecast/wind.svg" width="30" height="30" />
             <p className=" ms-3 fs-5">

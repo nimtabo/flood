@@ -21,9 +21,10 @@ type CarouselProps = {
   description: String;
   btnText: String;
   height: String;
+  images: string[];
 };
 
-const SlideShow = ({ title, description, btnText, height }: CarouselProps) => {
+const SlideShow = ({ title, description, btnText, height, images }: CarouselProps) => {
   // const images = [
   //   "/home-header-slide-images/early_warning_sign.jpg",
   //   "/home-header-slide-images/flood.png",
@@ -31,12 +32,7 @@ const SlideShow = ({ title, description, btnText, height }: CarouselProps) => {
   //   "/home-header-slide-images/flooded_farm.jpg",
   // ];
 
-  const images = [
-    "/home-header-slide-images/Edo_flood.jpg",
-    "/home-header-slide-images/lagos-flood.jpg",
-    "/home-header-slide-images/flood.png",
-    "/home-header-slide-images/flooded.webp",
-  ];
+
 
   return (
     <div
@@ -56,8 +52,9 @@ const SlideShow = ({ title, description, btnText, height }: CarouselProps) => {
       >
         <Swiper
           autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
+            delay: 4000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true
           }}
           pagination={{
             clickable: true,
@@ -99,19 +96,19 @@ const SlideShow = ({ title, description, btnText, height }: CarouselProps) => {
         </div>
       ) : (
         <div
-          className="slide-text mx-lg-5 p-lg-5 p-4 w-100 w-lg-50"
+          className="slide-text mx-lg-5 p-lg-4 p-4 w-100 w-lg-25"
           style={{ position: "absolute", zIndex: "1" }}
         >
           <h2
             className="text-white fw-bold w-100 border-bottom border-danger"
-            style={{ fontSize: "55px" }}
+            style={{ fontSize: "40px" }}
           >
             {/* Flood Prediction {new Date().getFullYear()} */}
             {title}
           </h2>
           <p
             className="text-white  fw-light fs-4 w-lg-100"
-            // style={{ fontSize: "8px" }}
+          // style={{ fontSize: "8px" }}
           >
             {/* Turn Around, Don't Drown at Flooded Roads  */}
             {description}

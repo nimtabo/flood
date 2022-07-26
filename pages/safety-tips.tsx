@@ -5,17 +5,21 @@ import BlogScreen from "../src/screens/BlogScreen";
 import SlideShow from "../src/components/headerCarousel";
 
 export default function WhatToDo() {
+  const images = [
+    "/home-header-slide-images/flood4.jpg",
+  ];
   return (
     <>
       <section
         className="row m-0 p-0 d-flex "
-        style={{ maxWidth: "100vw", height: "92vh" }}
+        style={{ maxWidth: "100vw", height: "82vh" }}
       >
         <SlideShow
           title="Flood Safety Tips and Resources"
           description="Flooding is a coast-to-coast threat to some part of the Nigeria States and its territories"
           btnText={`What To Know`}
-          height="92vh"
+          height="82vh"
+          images={images}
         />
       </section>
 

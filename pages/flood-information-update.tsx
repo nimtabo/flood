@@ -87,63 +87,70 @@ export default function FloodInformationUpdate() {
     }
   };
 
+  const images = [
+    "/home-header-slide-images/flood4.jpg",
+  ];
+
   return (
-    <div className="">
+    <>
       <section
         className="row m-0 p-0 d-flex "
-        style={{ maxWidth: "100vw", height: "92vh" }}
+        style={{ maxWidth: "100vw", height: "82vh" }}
       >
         <SlideShow
           title="Flood Information Centre"
           description="Learn how to protect yourself nd family. Check for flood Information and read our flood surviving guid"
           btnText="Know More"
-          height="92vh"
+          height="82vh"
+          images={images}
         />
       </section>
-      <TitleHeader currentScreen="flood-information-update" />
-      <div className=" d-flex flex-column align-items-center">
-        <div className="p-3  w-100 w-sm-100 w-md-100 w-lg-75">
-          {data &&
-            data.data.docs.map((_each, _index) => (
-              <FloodInformationUpdateCard details={_each} key={_index} />
-            ))}
-          {data && (
-            <div className="d-flex align-items-center justify-content-center bg-white p-2 rounded shadow-3 ">
-              <button
-                className="btn new_blue_bg text-white shadow-sm me-2"
-                disabled={reportParams.page - 5 < 1}
-                onClick={() => previousPage(true)}
-              >
-                {"<<"}
-              </button>
-              <button
-                className="btn new_blue_bg text-white shadow-sm me-2"
-                disabled={!Boolean(data.data.prevPage)}
-                onClick={() => previousPage(false)}
-              >
-                {"<"}
-              </button>
-              <p className="me-2">
-                Page: {reportParams.page} of {Number(data.data.totalPages)}
-              </p>
-              <button
-                className={`btn new_blue_bg text-white shadow-sm me-2 `}
-                disabled={!Boolean(data.data.nextPage)}
-                onClick={() => nextPage(false)}
-              >
-                {">"}
-              </button>
-              <button
-                className="btn new_blue_bg text-white shadow-sm me-2"
-                onClick={() => nextPage(true)}
-                disabled={reportParams.page + 5 > Number(data.data.totalPages)}
-              >
-                {">>"}
-              </button>
-            </div>
-          )}
+      <div className="">
+        <TitleHeader currentScreen="flood-information-update" />
+        <div className=" d-flex flex-column align-items-center">
+          <div className="p-3  w-100 w-sm-100 w-md-100 w-lg-75">
+            {data &&
+              data.data.docs.map((_each, _index) => (
+                <FloodInformationUpdateCard details={_each} key={_index} />
+              ))}
+            {data && (
+              <div className="d-flex align-items-center justify-content-center bg-white p-2 rounded shadow-3 ">
+                <button
+                  className="btn new_blue_bg text-white shadow-sm me-2"
+                  disabled={reportParams.page - 5 < 1}
+                  onClick={() => previousPage(true)}
+                >
+                  {"<<"}
+                </button>
+                <button
+                  className="btn new_blue_bg text-white shadow-sm me-2"
+                  disabled={!Boolean(data.data.prevPage)}
+                  onClick={() => previousPage(false)}
+                >
+                  {"<"}
+                </button>
+                <p className="me-2">
+                  Page: {reportParams.page} of {Number(data.data.totalPages)}
+                </p>
+                <button
+                  className={`btn new_blue_bg text-white shadow-sm me-2 `}
+                  disabled={!Boolean(data.data.nextPage)}
+                  onClick={() => nextPage(false)}
+                >
+                  {">"}
+                </button>
+                <button
+                  className="btn new_blue_bg text-white shadow-sm me-2"
+                  onClick={() => nextPage(true)}
+                  disabled={reportParams.page + 5 > Number(data.data.totalPages)}
+                >
+                  {">>"}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
