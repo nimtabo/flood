@@ -12,6 +12,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.44",
+    "@types/react-animate-on-scroll": "^2.1.5",
     "@types/react-router-dom": "^5.3.3",
     "akamai": "^0.10.1",
     "animate.css": "^4.1.1",
